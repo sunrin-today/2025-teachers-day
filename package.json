@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "pnpm run lint && next build",
+    "lint": "eslint . --fix",
+    "lint:dry": "eslint . --fix-dry-run"
   },
   "dependencies": {
     "next": "15.3.2",
