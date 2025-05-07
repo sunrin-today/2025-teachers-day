@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "pnpm run lint && next build",
     "lint": "eslint . --fix",
-    "lint:dry": "eslint . --fix-dry-run"
+    "lint:dry": "eslint . --fix-dry-run",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:reset": "prisma migrate reset"
   },
   "dependencies": {
     "next": "15.3.2",
