@@ -20,14 +20,14 @@ export default function NameInput(props: TeacherNameInputProps) {
   };
 
   return (
-    <div className='text-[#C46C6B] w-fit'>
-      <div className='flex flex-row w-fit h-[22px]'>
-        <div className='flex flex-row gap-[4px] w-fit ml-[4px]'>
+    <div className='text-[#C46C6B] w-fit text-[12px]'>
+      <div className='flex flex-row w-fit h-[22px] items-center'>
+        <div className='flex flex-row gap-[4px] w-fit ml-[4px] items-center'>
           <p className='font-(family-name:--font-leeseoyun)'>from.</p>
 
           <input
             className='h-full outline-none font-(family-name:--font-leeseoyun)'
-            size={Math.max(value.length * 1.3, 10)}
+            style={{ width: value.length > 9 ? value.length * 8 : '80px' }}
             value={value}
             onChange={handleNameChange}
             {...rest}
