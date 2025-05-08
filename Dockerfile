@@ -2,7 +2,9 @@ FROM node:23-bookworm-slim AS base
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm --activate
+RUN apt-get update && \
+    apt-get install -y openssl libssl-dev && \
+    corepack enable && corepack prepare pnpm --activate
 
 COPY package.json pnpm-lock.yaml ./
 
@@ -22,7 +24,9 @@ FROM node:23-bookworm-slim AS production
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm --activate
+RUN apt-get update && \
+    apt-get install -y openssl libssl-dev && \
+    corepack enable && corepack prepare pnpm --activate
 
 ENV TZ=Asia/Seoul
 ENV NODE_ENV=production
