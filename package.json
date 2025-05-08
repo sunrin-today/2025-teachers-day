@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "pnpm run lint && next build",
+    "start": "next start",
     "lint": "eslint . --fix",
     "lint:dry": "eslint . --fix-dry-run",
     "db:generate": "prisma generate",
