@@ -1,5 +1,5 @@
 import React from 'react';
-import Line from '../line';
+import Divider from '../divider';
 
 interface TeacherNameInputProps extends React.ComponentProps<'input'> {
   value:    string;
@@ -19,11 +19,14 @@ export default function TeacherNameInput(props: TeacherNameInputProps) {
     setValue(e.target.value);
   };
 
-  const lineLength = value.length === 4 ? 280 : 246
+  const lineLength = value.length === 4 ? 280 : 246;
 
   return (
     <div>
-      <Line double length={lineLength}/>
+      <Divider
+        double
+        length={lineLength}
+      />
 
       <div className='flex flex-row text-[18px] gap-[12px] relative items-center'>
         <p className='font-(family-name:--font-dongguk-university) ml-[8px]'>To.</p>
@@ -32,9 +35,10 @@ export default function TeacherNameInput(props: TeacherNameInputProps) {
           <input
             spellCheck='false'
             autoComplete='off'
-            className='outline-none font-(family-name:--font-dongguk-university) tracking-[16px] decoration-none h-full'
+            className='outline-none font-(family-name:--font-dongguk-university) tracking-[16px] decoration-none h-full placeholder-[#ccc]'
             value={value}
             style={{ width: value.length === 4 ? '136px' : '100px' }}
+            placeholder='홍길동'
             onChange={handleTeacherNameChange}
             {...rest}
           />
@@ -45,7 +49,7 @@ export default function TeacherNameInput(props: TeacherNameInputProps) {
         <div className='absolute flex flex-row left-[42px] gap-[32px]'>
           {
             Array.from({ length: value.length === 4 ? 8 : 7 }).map((_, i) => (
-              <Line
+              <Divider
                 key={i}
                 length={32}
                 direction='vertical'
@@ -55,7 +59,10 @@ export default function TeacherNameInput(props: TeacherNameInputProps) {
         </div>
       </div>
 
-      <Line double length={lineLength}/>
+      <Divider
+        double
+        length={lineLength}
+      />
     </div>
   );
 }

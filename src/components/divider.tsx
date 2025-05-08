@@ -2,15 +2,15 @@ interface LineProps {
   length?:    number;
   direction?: 'vertical' | 'horizontal';
   double?:    boolean;
-  full?: boolean;
+  full?:      boolean;
 }
 
-export default function Line(props: LineProps) {
+export default function Divider(props: LineProps) {
   const {
     length = 246,
     direction = 'horizontal',
     double = false,
-    full = false
+    full = false,
   } = props;
 
   const line = (
