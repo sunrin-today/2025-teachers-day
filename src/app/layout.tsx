@@ -1,33 +1,24 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import { donggukUniversity, leeSeoyun } from '@/resources/fonts';
 
 export const metadata: Metadata = {
-  title: "2025년 스승의 날",
-  description: "Made by Sunrin Internet Highschool Student Council",
+  title:       '2025년 스승의 날',
+  description: 'Made by Sunrin Internet Highschool Student Council',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${donggukUniversity.variable} ${leeSeoyun.variable} antialiased`}
       >
-        {children}
+        <div className='w-full h-screen bg-[#fff] flex items-center justify-center text-black'>
+          {children}
+        </div>
       </body>
     </html>
   );
