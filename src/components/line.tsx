@@ -2,6 +2,7 @@ interface LineProps {
   length?:    number;
   direction?: 'vertical' | 'horizontal';
   double?:    boolean;
+  full?: boolean;
 }
 
 export default function Line(props: LineProps) {
@@ -9,14 +10,15 @@ export default function Line(props: LineProps) {
     length = 246,
     direction = 'horizontal',
     double = false,
+    full = false
   } = props;
 
   const line = (
     <div
       className='bg-[#C46C6B]'
       style={{
-        width:  direction === 'horizontal' ? length : 1,
-        height: direction === 'horizontal' ? 1 : length,
+        width:  direction === 'horizontal' ? full ? '100%' : length : 1,
+        height: direction === 'horizontal' ? 1 : full ? '100%' : length,
       }}
     />
   );
