@@ -34,6 +34,7 @@ ENV NODE_ENV=production
 COPY --from=build /app/.next .next
 COPY --from=build /app/public public
 COPY --from=build /app/package.json .
+COPY --from=build /app/src/generated/prisma /app/src/generated/prisma
 COPY --from=deps /app/node_modules node_modules
 
 RUN mkdir -p /app/.next/cache/images && chown -R node:node /app/.next
